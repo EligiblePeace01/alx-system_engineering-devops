@@ -1,8 +1,12 @@
-# Puppet file that set ssh config
-# Password Authentication to None
-# Connects with ~/.ssh/school private key
+# Puppet script to create ssh config file
+file_line { 'Turn off the password authentification':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    PasswordAuthentication no',
+}
 
-file { '/home/user/.ssh/config':
-    ensure  => present,
-    content => "Host server\n  IdentityFile ~/.ssh/school\n  PasswordAuthentication no\n",
+file_line { 'the identity file':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    IdentityFile ~/.ssh/school',
 }
