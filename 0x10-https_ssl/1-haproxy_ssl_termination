@@ -47,5 +47,5 @@ frontend eligiblepeace-frontend-https
 
 backend eligiblepeace-backend
         balance roundrobin
-        server 151666-web-01 54.157.135.236:80 check
-        server 151666-web-02 100.25.119.58:80 check
+        server 425257-web-01 54.157.135.236:80 check
+        server 425257-web-02 100.25.119.58:80 check
