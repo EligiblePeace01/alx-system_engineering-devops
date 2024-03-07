@@ -1,0 +1,32 @@
+const fs = require('fs');
+const fetch = require('node-fetch');
+
+/* Function to fetch dashboard ID from Datadog API*/
+async function fetchDashboardId(f05008f5e21964f798914c6b159d37ee, f05008f5e21964f798914c6b159d37ee, PeaceEenwere) {
+    const url = https://app.datadoghq.com/dashboard/s3p-9da-tdz/peace?fromUser=false&refresh_mode=sliding&from_ts=1709765225480&to_ts=1709768825480&live=true
+    const response = await fetch(url);
+    const data = await response.json();
+    if (data.dashes && data.dashes.length > 0) {
+        return data.dashes[0].id;
+    } else {
+        throw new Error('Dashboard not found.');
+    }
+}
+
+const apiKey = f05008f5e21964f798914c6b159d37ee;
+const appId = f05008f5e21964f798914c6b159d37ee;
+const dashboardName Peace Enwere;
+
+
+fetchDashboardId(f05008f5e21964f798914c6b159d37ee, f05008f5e21964f798914c6b159d37ee, Peace Enwere)
+    .then(dashboardId => {
+        fs.writeFile('2-setup_datadog', dashboardId, (err) => {
+            if (err) {
+                console.error('Error writing file:', err);
+            } else {
+                console.log('Dashboard ID written to file successfully.');
+            }
+        });
+    })
+    .catch(err => console.error(err));
+
